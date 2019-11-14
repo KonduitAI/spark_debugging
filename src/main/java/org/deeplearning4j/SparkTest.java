@@ -113,7 +113,7 @@ public class SparkTest {
     }
 
     private String time(long start){
-        return DurationFormatUtils.formatDurationHMS(now - start);
+        return DurationFormatUtils.formatDurationHMS(System.currentTimeMillis() - start);
     }
 
 }
