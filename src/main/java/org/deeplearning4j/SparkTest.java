@@ -54,7 +54,7 @@ public class SparkTest {
         int nInOutSize = 64;
 
         VoidConfiguration voidConfiguration = VoidConfiguration.builder()
-                .unicastPort(12345) // These DLConfig values are determined at runtime
+//                .unicastPort(12345)
                 .controllerAddress(masterIP)
                 .networkMask(netmask)
                 .build();
