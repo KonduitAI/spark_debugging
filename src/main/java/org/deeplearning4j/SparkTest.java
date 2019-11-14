@@ -3,6 +3,7 @@ package org.deeplearning4j;
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.time.DurationFormatUtils;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.deeplearning4j.nn.conf.MultiLayerConfiguration;
@@ -112,10 +113,7 @@ public class SparkTest {
     }
 
     private String time(long start){
-        long now = System.currentTimeMillis();
-        long hr = (now - start) / (60 * 60 * 1000);
-        long min = ((now - start) % hr) / (60 * 1000);
-        return hr + "hr, " + min + " min";
+        return DurationFormatUtils.formatDurationHMS(now - start);
     }
 
 }
