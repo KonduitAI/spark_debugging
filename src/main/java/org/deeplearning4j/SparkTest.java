@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.time.DurationFormatUtils;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
+import org.deeplearning4j.nn.conf.BackpropType;
 import org.deeplearning4j.nn.conf.MultiLayerConfiguration;
 import org.deeplearning4j.nn.conf.NeuralNetConfiguration;
 import org.deeplearning4j.nn.conf.layers.LSTM;
@@ -73,7 +74,7 @@ public class SparkTest {
                 .layer(new LSTM.Builder().nIn(nInOutSize).nOut(nInOutSize).build())
                 .layer(new LSTM.Builder().nIn(nInOutSize).nOut(nInOutSize).build())
                 .layer(new RnnOutputLayer.Builder().nIn(nInOutSize).nOut(nInOutSize).activation(Activation.SOFTMAX).lossFunction(LossFunctions.LossFunction.MCXENT).build())
-                .tBPTTLength(32)
+                .tBPTTLength(32).backpropType(BackpropType.TruncatedBPTT)
                 .build();
 
         JavaSparkContext sc = new JavaSparkContext();
