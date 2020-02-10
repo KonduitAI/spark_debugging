@@ -64,13 +64,13 @@
         <dependency>
             <groupId>org.deeplearning4j</groupId>
             <artifactId>dl4j-spark_2.11</artifactId>
-            <version>${dl4j.version}</version>
+            <version>1.0.0-beta4_spark_2</version>
         </dependency>
 
         <dependency>
             <groupId>org.deeplearning4j</groupId>
             <artifactId>dl4j-spark-parameterserver_2.11</artifactId>
-            <version>${dl4j.version}</version>
+            <version>1.0.0-beta4_spark_2</version>
         </dependency>
 
         <dependency>
