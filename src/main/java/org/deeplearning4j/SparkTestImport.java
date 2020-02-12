@@ -71,7 +71,7 @@ public class SparkTestImport {
         JavaSparkContext sc = new JavaSparkContext();
         SparkDl4jMultiLayer net = new SparkDl4jMultiLayer(sc, model, trainingMaster);
 
-        int nMinibatches = 200;
+        int nMinibatches = 20;
         int seqLengthMin = 32;
         int seqLengthMax = 100;
 
