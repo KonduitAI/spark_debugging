@@ -73,7 +73,7 @@ public class SparkTestImport {
 
         int nMinibatches = 200;
         int seqLengthMin = 32;
-        int seqLengthMax = 500;
+        int seqLengthMax = 100;
 
         List<DataSet> data = new ArrayList<>();
         Random r = new Random(12345);
