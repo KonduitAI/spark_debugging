@@ -10,9 +10,9 @@ NETWORK_MASK=10.0.2.0/16                                #Network maske For examp
 SPARKSUBMIT=/opt/spark/bin/spark-submit
 
 # For memory config, see https://deeplearning4j.org/memory
-JAVA_HEAP_MEM=8G
-OFFHEAP_MEM_JAVACPP=12G
-OFFHEAP_JAVACPP_MAX_PHYS=20G
+JAVA_HEAP_MEM=4G
+OFFHEAP_MEM_JAVACPP=8G
+OFFHEAP_JAVACPP_MAX_PHYS=12G
 #Aeron buffer. Default of 32MB is fine for this example. Larger neural nets may require larger: 67108864 or 134217728. Must be a power of 2 exactly
 AERON_BUFFER=33554432
 
