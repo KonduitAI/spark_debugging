@@ -80,13 +80,8 @@ public class SparkTestImport {
         for (int i = 0; i < nMinibatches; i++) {
             int length = seqLengthMin + r.nextInt(seqLengthMax - seqLengthMin);
             INDArray f = Nd4j.rand(DataType.FLOAT, minibatch, NINSIZE, length);
-            INDArray l = Nd4j.zeros(DataType.FLOAT, minibatch, NINSIZE, length);
-            for (int e = 0; e < minibatch; e++) {
-                for (int t = 0; t < length; t++) {
-                    int idx = r.nextInt(NINSIZE);
-                    l.putScalar(e, idx, t, 1.0);
-                }
-            }
+            //Output is the average of all features at the last time step
+            INDArray l = f.sum(1).getColumns((int)f.size(2)-1).div(f.size(1));
             data.add(new DataSet(f, l));
         }
 
