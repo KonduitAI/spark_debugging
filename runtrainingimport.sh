@@ -22,7 +22,7 @@ JARFILE=${SCRIPTDIR}/target/deeplearning4j-examples-1.0.0-beta5-bin.jar
 
 
 CMD="${SPARKSUBMIT}
-    --class org.deeplearning4j.SparkTest
+    --class org.deeplearning4j.SparkTestImport
     --conf spark.locality.wait=0
     --conf 'spark.executor.extraJavaOptions=-Dorg.bytedeco.javacpp.maxbytes=$OFFHEAP_MEM_JAVACPP -Dorg.bytedeco.javacpp.maxphysicalbytes=$OFFHEAP_JAVACPP_MAX_PHYS -Daeron.term.buffer.length=${AERON_BUFFER}'
     --conf 'spark.driver.extraJavaOptions=-Dorg.bytedeco.javacpp.maxbytes=$OFFHEAP_MEM_JAVACPP -Dorg.bytedeco.javacpp.maxphysicalbytes=$OFFHEAP_JAVACPP_MAX_PHYS -Daeron.term.buffer.length=${AERON_BUFFER}'
