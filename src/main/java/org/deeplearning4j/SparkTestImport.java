@@ -64,7 +64,9 @@ public class SparkTestImport {
                 .batchSizePerWorker(minibatch)
                 .build();
 
-        final String MODEL_PATH = new ClassPathResource("proof_of_concept_model_highlr.h5").getFile().getAbsolutePath();
+        //final String MODEL_PATH = new ClassPathResource("proof_of_concept_model.h5").getFile().getAbsolutePath();
+        //final String MODEL_PATH = new ClassPathResource("proof_of_concept_model_highlr.h5").getFile().getAbsolutePath();
+        final String MODEL_PATH = new ClassPathResource("proof_of_concept_model_lowlr.h5").getFile().getAbsolutePath();
         MultiLayerNetwork model = KerasModelImport.importKerasSequentialModelAndWeights(MODEL_PATH, true);
         System.out.println(model.summary());
 
